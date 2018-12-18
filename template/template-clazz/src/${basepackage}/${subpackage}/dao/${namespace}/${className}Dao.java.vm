@@ -1,0 +1,16 @@
+<#include "/macro.include"/>
+<#include "/java_copyright.include">
+<#assign className = clazz.className>
+<#assign classNameLower = className?uncap_first>
+package ${basepackage}.${subpackage}.dao.${namespace};
+
+import net.ptnetwork.dao.BaseDao;
+
+import  ${basepackage}.${subpackage}.entity.${namespace}.${className};
+
+
+<#include "/custom.include"/>
+
+public interface ${className}Dao extends BaseDao< ${className}, Long>{
+
+}

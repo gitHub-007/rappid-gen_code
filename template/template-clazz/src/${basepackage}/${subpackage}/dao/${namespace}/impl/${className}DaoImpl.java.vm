@@ -1,0 +1,17 @@
+<#include "/macro.include"/>
+<#include "/java_copyright.include">
+<#assign className = clazz.className>
+<#assign classNameLower = className?uncap_first>
+package ${basepackage}.${subpackage}.dao.${namespace}.impl;
+
+import org.springframework.stereotype.Repository;
+import net.ptnetwork.dao.impl.BaseDaoImpl;
+import ${basepackage}.${subpackage}.dao.${namespace}.${className}Dao;
+import ${basepackage}.${subpackage}.entity.${namespace}.${className};
+
+<#include "/custom.include"/>
+
+@Repository
+public class ${className}DaoImpl extends BaseDaoImpl<${className}, Long> implements ${className}Dao {
+    
+}

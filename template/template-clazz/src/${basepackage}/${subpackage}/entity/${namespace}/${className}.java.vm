@@ -1,0 +1,31 @@
+<#include "/macro.include"/>
+<#include "/java_copyright.include">
+<#assign className = clazz.className>
+<#assign classNameLower = className?uncap_first>
+package ${basepackage}.${subpackage}.entity.${namespace};
+
+import java.io.Serializable;
+import java.util.Date;
+
+<#include "/custom.include"/>
+
+public class ${className} implements Serializable {
+
+	<#list clazz.fields as field>
+	private ${field.javaType} ${field.fieldName};
+	</#list>
+
+	<#list clazz.fields as field>
+	<@genGetterAndSetter propertyName=field.fieldName javaType= field.javaType />
+	</#list>
+
+	<#-- 生成get set方法-->
+	<#macro genGetterAndSetter propertyName javaType>
+	public ${javaType} get${propertyName?cap_first}() {
+		return ${propertyName};
+	}
+	public void set${propertyName?cap_first}(${javaType} ${propertyName}) {
+		this.${propertyName} = ${propertyName};
+	}
+	</#macro>
+}

@@ -1,0 +1,14 @@
+<#-- 本文件包含一些公共的变量 -->
+
+<#-- actionBasePath 用于struts,springmvc框架的action路径前缀,如 /namespace/User/list.do的/namespace/User部分,可以自定义这个变量 -->
+<#assign actionBasePath = "/"+subpackage_custom+"/"+table.className>
+
+<#-- jspFileBasePath 用于struts,springmvc框架的java文件引用的jsp前缀,如 /namespace/User/list.jsp的/namespace/User部分 -->
+<#assign jspFileBasePath = "/"+subpackage_custom+"/"+table.className>
+/**
+ * Created by CodeGenerator.
+ * @author <#if author??>${author}<#else>admin</#if>
+ * @version 1.0
+ * @created at: <#if now??>- ${now?string('yyyy-MM-dd HH:mm:ss')}</#if>
+ * @Description:${table.className}
+ */

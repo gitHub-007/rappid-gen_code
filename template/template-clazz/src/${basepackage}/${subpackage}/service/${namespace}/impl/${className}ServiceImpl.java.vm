@@ -1,0 +1,58 @@
+<#include "/java_copyright.include">
+<#assign className = clazz.className>
+<#assign classNameLower = className?uncap_first>
+package ${basepackage}.${subpackage}.service.${namespace}.impl;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import net.ptnetwork.service.impl.BaseServiceImpl;
+import ${basepackage}.${subpackage}.service.${namespace}.${className}Service;
+import ${basepackage}.${subpackage}.entity.${namespace}.${className};
+
+<#include "/custom.include"/>
+
+@Service
+public class ${className}ServiceImpl extends BaseServiceImpl<${className}, Long> implements ${className}Service {
+
+	@Inject
+	private ${className}Dao ${classNameLower}Dao;
+
+	@Override
+	@Transactional
+	public ${className} save(${className} ${classNameLower}) {
+		return super.save(${classNameLower});
+	}
+
+	@Override
+	@Transactional
+	public ${className} update(${className} ${classNameLower}) {
+		return super.update(${classNameLower});
+	}
+
+	@Override
+	@Transactional
+	public ${className} update(${className} ${classNameLower}, String... ignoreProperties) {
+		return super.update(${classNameLower}, ignoreProperties);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		super.delete(id);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long... ids) {
+		super.delete(ids);
+	}
+
+	@Override
+	@Transactional
+	public void delete(${className} ${classNameLower}) {
+		super.delete(${classNameLower});
+	}
+
+}
+
